@@ -1,7 +1,13 @@
 /******************************************************************
 ContactosEmergencia.java
-Autor: Andrés de la Roca
-Carné: 20332
+Integrantes: 
+Jun Woo Lee Hong 
+Cristian Eduardo Aguirre Duarte 
+Andrés Alejandro de la Roca Pineda 
+Sayra Estefanía Elvira Ramos 
+Pablo Daniel Gonzalez Ramos 
+Manuel Alejandro Archila Moran
+
 Última modificación: 8/30/2020
 
 Clase que maneja los contactos de emergencia, se le pregunta al

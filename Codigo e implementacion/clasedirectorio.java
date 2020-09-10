@@ -1,8 +1,25 @@
+/******************************************************************
+ContactosEmergencia.java
+Integrantes: 
+Jun Woo Lee Hong 
+Cristian Eduardo Aguirre Duarte 
+Andrés Alejandro de la Roca Pineda 
+Sayra Estefanía Elvira Ramos 
+Pablo Daniel Gonzalez Ramos 
+Manuel Alejandro Archila Moran
+
+
+Última modificación: 8/30/2020
+
+Clase que maneja el directorio de los diferentes hospitales en todos
+los departamentos de Guatemala que pueden realizar la prueba de COVID-19
+******************************************************************/
+
 import java.util.HashMap;
-
-
 import java.util.ArrayList;
-class directoriohospitales{
+
+public class ClaseDirectorio {
+
     ArrayList  hospitales= new ArrayList<>();
     //Hasmap de los diferentes municipios
     HashMap<String,HashMap> guatemala= new HashMap<String,HashMap>();
