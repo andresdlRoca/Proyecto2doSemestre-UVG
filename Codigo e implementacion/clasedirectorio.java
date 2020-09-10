@@ -25,9 +25,6 @@ class directoriohospitales{
     HashMap<String,String> roosvelt=new HashMap<String,String>();
     HashMap<String,String> igssz9=new HashMap<String,String>();
     
-
-   
-
     HashMap<String,HashMap> sanmarcos= new HashMap<String,HashMap>();
     HashMap<String,String> nsanmarcos =new HashMap<String,String>();
     HashMap<String,String> labsanmarcos =new HashMap<String,String>();
@@ -39,7 +36,6 @@ class directoriohospitales{
     HashMap<String,String> hospitalxela=new HashMap<String,String>();
     HashMap<String,String> igxela=new HashMap<String,String>();
 
-
     HashMap<String,HashMap> huehuetenango= new HashMap<String,HashMap>();
     HashMap<String,String> hospitalnacionalhuehue=new HashMap<String,String>();
     HashMap<String,String> pvhuehue=new HashMap<String,String>();
@@ -50,10 +46,6 @@ class directoriohospitales{
     HashMap<String,String> naza=new HashMap<String,String>();
     HashMap<String,String> iggsquiche=new HashMap<String,String>();
     
-
-
-
-
     HashMap<String,HashMap> altaverapaz= new HashMap<String,HashMap>();
     HashMap<String,String> hospitalnalta=new HashMap<String,String>();
     HashMap<String,String> hospitalrgc=new HashMap<String,String>();
@@ -73,8 +65,6 @@ class directoriohospitales{
     HashMap<String,String> z2=new HashMap<String,String>();
     HashMap<String,String> z3=new HashMap<String,String>();
     HashMap<String,String> z4=new HashMap<String,String>();
-
-
 
     HashMap<String,HashMap> izabal= new HashMap<String,HashMap>();
     HashMap<String,String> iz1=new HashMap<String,String>();
@@ -111,26 +101,19 @@ class directoriohospitales{
     HashMap<String,String> e3=new HashMap<String,String>();
     HashMap<String,String> e4=new HashMap<String,String>();
 
-
-
-
-
     HashMap<String,HashMap> sacatepequez= new HashMap<String,HashMap>();
     HashMap<String,String> sc1=new HashMap<String,String>();
     HashMap<String,String> sc2=new HashMap<String,String>();
     HashMap<String,String> sc3=new HashMap<String,String>();
-
 
     HashMap<String,HashMap> retalhuleu= new HashMap<String,HashMap>();
     HashMap<String,String> rl1=new HashMap<String,String>();
     HashMap<String,String> rl2=new HashMap<String,String>();
     HashMap<String,String> rl3=new HashMap<String,String>();
 
-
     HashMap<String,HashMap> solola= new HashMap<String,HashMap>();
     HashMap<String,String> sl1=new HashMap<String,String>();
  
-
     HashMap<String,HashMap> totonicapan= new HashMap<String,HashMap>();
     HashMap<String,String> tt1=new HashMap<String,String>();
     HashMap<String,String> tt2=new HashMap<String,String>();
@@ -140,7 +123,6 @@ class directoriohospitales{
     HashMap<String,String> ch1=new HashMap<String,String>();
     HashMap<String,String> ch2=new HashMap<String,String>();
     HashMap<String,String> ch3=new HashMap<String,String>();
-
 
     HashMap<String,HashMap> suchitepequez= new HashMap<String,HashMap>();
     HashMap<String,String> such1=new HashMap<String,String>();
@@ -498,11 +480,6 @@ class directoriohospitales{
 
        hospitales.add(peten);
 
-
-
-
-       
-
    }
    public void setchiquimula(){
        String ch1="Hospital Modular de Chiquimula";
@@ -526,11 +503,6 @@ class directoriohospitales{
        chiquimula.put(ch31, chq3);
 
        hospitales.add(chiquimula);
-
-
-
-
-
 
    }
    public void setjutiapa(){
@@ -559,11 +531,6 @@ class directoriohospitales{
 
        hospitales.add(jutiapa);
        
-       
-
-
-
-
    }   
    public void setjalapa(){
        String jlp1="Centro Medico Jalapa";
@@ -582,10 +549,6 @@ class directoriohospitales{
 
        hospitales.add(jalapa);
 
-    
-
-       
-
    }
    public void setsantarosa(){
        String snr1="Hospital Nacional de Cuilapa";
@@ -603,9 +566,6 @@ class directoriohospitales{
 
 
        hospitales.add(santarosa);
-
-
-
 
    }
    public void setescuintla(){
@@ -632,9 +592,6 @@ class directoriohospitales{
        e4.put(es4, es4n);
 
        hospitales.add(escuintla);
-       
-
-
 
    }
    public void setsacatepequez(){
@@ -661,9 +618,6 @@ class directoriohospitales{
 
        hospitales.add(sacatepequez);
 
-
-
-
    }
    public void retalhuleu(){
 
@@ -687,11 +641,7 @@ class directoriohospitales{
     retalhuleu.put(reu31,rl3 );
 
     hospitales.add(retalhuleu)
-
-
-
-
-    
+  
    }
    public void setsolola(){
        String sol1="Hospital Nacional De Sololá";
@@ -728,10 +678,6 @@ class directoriohospitales{
 
        hospitales.add(totonicapan);
 
-
-
-
-
    }
    public void setchimaltenango(){
        String chi1="Hospital Nacional de Chimaltenango";
@@ -755,10 +701,6 @@ class directoriohospitales{
        
        hospitales.add(chimaltenango);
 
-
-
-
-
    }
    public void setchutipequez(){
        String suchi1="Hospital Nacional de Mazatenango";
@@ -768,24 +710,5 @@ class directoriohospitales{
        suchitepequez.put(suchi11, such1);
 
        hospitales.add(suchitepequez);
-
-
    }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
