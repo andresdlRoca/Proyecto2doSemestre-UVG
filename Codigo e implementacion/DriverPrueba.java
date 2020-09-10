@@ -11,8 +11,7 @@ public class DriverPrueba { //Clase driver para probar las partes del programa
         ClaseDirectorio CD = new ClaseDirectorio();
 
         CE.crearListaContactos();
-        CD.setMapaguatemala();
-
+        CD.setAllHashmaps();
 
         //Loop principal
         while (opcion != 3) {
