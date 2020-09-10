@@ -144,6 +144,30 @@ public class ClaseDirectorio {
     HashMap<String,HashMap> suchitepequez= new HashMap<String,HashMap>();
     HashMap<String,String> such1=new HashMap<String,String>();
 
+    public void setAllHashmaps() {
+        setMapaguatemala();
+        setaltaverapaz();
+        setbajaverapaz();
+        setchimaltenango();
+        setchiquimula();
+        setchutipequez();
+        setelprogreso();
+        setescuintla();
+        sethuehuetenango();
+        setizabal();
+        setjalapa();
+        setjutiapa();
+        setpeten();
+        setquetzaltenago();
+        setquiche();
+        setsacatepequez();
+        setsanmarcos();
+        setsantarosa();
+        setsolola();
+        settotonicapan();
+        setzacapa();
+    }
+
     public void setMapaguatemala(){
         String a="cetro medicio zona 7";
         String b="46414642";
