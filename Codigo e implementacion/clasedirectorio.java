@@ -1,5 +1,5 @@
 /******************************************************************
-ContactosEmergencia.java
+ClaseDirectorio.java
 Integrantes: 
 Jun Woo Lee Hong 
 Cristian Eduardo Aguirre Duarte 
@@ -53,7 +53,7 @@ public class ClaseDirectorio {
     HashMap<String,String> hospitalxela=new HashMap<String,String>();
     HashMap<String,String> igxela=new HashMap<String,String>();
 
-    HashMap<String,HashMap> huehuetenango= new HashMap<String,HashMap>();
+    HashMap<String,HashMap> huehuetenango= new HashMap<String   ,HashMap>();
     HashMap<String,String> hospitalnacionalhuehue=new HashMap<String,String>();
     HashMap<String,String> pvhuehue=new HashMap<String,String>();
     HashMap<String,String> altuve=new HashMap<String,String>();
@@ -166,6 +166,11 @@ public class ClaseDirectorio {
         setsolola();
         settotonicapan();
         setzacapa();
+        setRetalhuleu();
+    }
+
+    public Object getInformacion(int index) {
+        return hospitales.get(index);
     }
 
     public void setMapaguatemala(){
@@ -660,7 +665,7 @@ public class ClaseDirectorio {
        hospitales.add(sacatepequez);
 
    }
-   public void retalhuleu(){
+   public void setRetalhuleu(){
 
     String reu1="Hospital Nacional De Retalhuleu";
     String reu1n="79328282";
@@ -681,7 +686,7 @@ public class ClaseDirectorio {
     String reu31="Hospital Los Olivos, Retalhuleu";
     retalhuleu.put(reu31,rl3 );
 
-    hospitales.add(retalhuleu)
+    hospitales.add(retalhuleu);
   
    }
    public void setsolola(){
