@@ -1,3 +1,20 @@
+/******************************************************************
+ContactosEmergencia.java
+Integrantes: 
+Jun Woo Lee Hong 
+Cristian Eduardo Aguirre Duarte 
+Andrés Alejandro de la Roca Pineda 
+Sayra Estefanía Elvira Ramos 
+Pablo Daniel Gonzalez Ramos 
+Manuel Alejandro Archila Moran
+
+Última modificación: 8/30/2020
+
+Clase que se encarga de registrar/logear a los usuarios que utilicen el 
+programa, de esta manera se puede guardar todos sus datos y personalizar
+la experiencia del programa.
+******************************************************************/
+
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Random;
