@@ -8,7 +8,7 @@ Sayra Estefanía Elvira Ramos
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
 
-Última modificación: 8/30/2020
+Última modificación: 10/9/2020
 
 Clase que se encarga de registrar/logear a los usuarios que utilicen el 
 programa, de esta manera se puede guardar todos sus datos y personalizar
@@ -23,14 +23,9 @@ import java.util.ArrayList;
 class Login{
 	Scanner scan = new Scanner(System.in);
 	boolean usernameGate = true;
-	String username;
-	String password;
 	boolean passwordGate = true;
-	int choiceAccount;
-	String name;
-	String address;
-	String age;
-	String email;
+	String username, password, name, address, email;
+	int choiceAccount, age;
 
 	//Hashmap que registra la informacion de todos los usuarios registrados
 	HashMap<String, ArrayList<String>> dataBank = new HashMap<String, ArrayList<String>>();
@@ -81,8 +76,9 @@ class Login{
 						
 
 					System.out.println("Ingrese su edad");
-					age = scan.nextLine();
+					age = scan.nextInt();
 					
+					scan.nextLine();
 					System.out.println("Ingrese su correo electronico");
 					email = scan.nextLine();
 					
@@ -91,7 +87,7 @@ class Login{
 					dataBank.get(username).add(password);
 					dataBank.get(username).add(name);
 					dataBank.get(username).add(address);
-					dataBank.get(username).add(age);
+					dataBank.get(username).add(Integer.toString(age));
 					dataBank.get(username).add(email);
 
 					System.out.println(dataBank);
