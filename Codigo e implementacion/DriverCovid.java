@@ -27,10 +27,10 @@ public class DriverCovid {
         Scanner scan = new Scanner(System.in);
         ContactosEmergencia CE = new ContactosEmergencia();
         ClaseDirectorio CD = new ClaseDirectorio();
-        Login log = new Login();
         HistorialMedico histmedico = new HistorialMedico();
         InfoCovid info = new InfoCovid();
         Sintomas Sint = new Sintomas();
+        InicioSesion lg = new InicioSesion();
 
         CE.crearListaContactos();
         CD.setAllHashmaps();
@@ -39,7 +39,7 @@ public class DriverCovid {
         while (opcion != 7) {
             while(logcondicion) {
                 try {
-                    log.getLogIn();
+                    lg.getLogIn();
                     histmedico.RegistroHistorial();
                     logcondicion = false;    
                 } catch (InputMismatchException e) {
