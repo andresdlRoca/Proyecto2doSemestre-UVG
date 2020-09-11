@@ -14,7 +14,6 @@ Clase que se encarga de toda la interaccion que el usuario tiene
 con el programa, le permite interactuar al usuario con todas las funciones
 que el programa tiene.
 ******************************************************************/
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -30,12 +29,14 @@ public class DriverCovid {
         ClaseDirectorio CD = new ClaseDirectorio();
         Login log = new Login();
         HistorialMedico histmedico = new HistorialMedico();
+        InfoCovid info = new InfoCovid();
+        Sintomas Sint = new Sintomas();
 
         CE.crearListaContactos();
         CD.setAllHashmaps();
 
         //Loop principal
-        while (opcion != 5) {
+        while (opcion != 7) {
             while(logcondicion) {
                 try {
                     log.getLogIn();
@@ -52,8 +53,10 @@ public class DriverCovid {
                 System.out.println("1. Menu de numeros de emergencia");
                 System.out.println("2. Menu de directorio de hospitales por departamento");
                 System.out.println("3. Informe de paciente");
-                System.out.println("4. Cerrar sesion");
-                System.out.println("5. Salir del programa\n");
+                System.out.println("4. Informacion importante sobre el COVID-19");
+                System.out.println("5. Revisar sus sintomas");
+                System.out.println("6. Cerrar sesion");
+                System.out.println("7. Salir del programa\n");
 
                 opcion = scan.nextInt();
 
@@ -96,8 +99,23 @@ public class DriverCovid {
                         break;
                     }
 
-                    //Cierre de sesion del usuario
                     case 4 : {
+                        System.out.println("--Menu de informacion de COVID-19--");
+                        System.out.println( info.DesplegarSintomas());
+                        System.out.println(info.DesplegarManeras());
+                        System.out.println(info.DesplegarCuidados());
+                        break;
+                    }
+
+                    //Ingreso de sintomas que presenta el usuario
+                    case 5 : {
+                        Sint.IngresarSintomas();
+                        break;
+                    }
+
+
+                    //Cierre de sesion del usuario
+                    case 6 : {
                         scan.nextLine();
                         System.out.println("Seguro que desea cerrar su sesion? (y/n)");
                         String eleccion = scan.nextLine();
@@ -114,7 +132,7 @@ public class DriverCovid {
                         break;
                     }
                     
-                    case 5 : {
+                    case 7 : {
                         System.out.println("Hasta Luego\nFin del programa...");
                         break;
                     }
