@@ -19,7 +19,7 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class InicioSesion{
+public class InicioSesion{
 	Scanner scan = new Scanner(System.in);
 	boolean usernameGate = true;
 	boolean passwordGate = true;
