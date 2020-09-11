@@ -8,7 +8,7 @@ Sayra Estefanía Elvira Ramos
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
 
-Última modificación: 8/30/2020
+Última modificación: 10/9/2020
 
 Clase que se encarga de toda la interaccion que el usuario tiene 
 con el programa, le permite interactuar al usuario con todas las funciones
@@ -29,14 +29,17 @@ public class DriverCovid {
         ContactosEmergencia CE = new ContactosEmergencia();
         ClaseDirectorio CD = new ClaseDirectorio();
         Login log = new Login();
+        HistorialMedico histmedico = new HistorialMedico();
+
         CE.crearListaContactos();
         CD.setAllHashmaps();
 
         //Loop principal
-        while (opcion != 4) {
+        while (opcion != 5) {
             while(logcondicion) {
                 try {
                     log.getLogIn();
+                    histmedico.RegistroHistorial();
                     logcondicion = false;    
                 } catch (InputMismatchException e) {
                     System.err.println("Ingreso un dato invalido, intente de nuevo");
@@ -46,15 +49,18 @@ public class DriverCovid {
             try {
                 //Opciones del sistema
                 System.out.println("\n\n----------Sistema de paciente de COVID-19----------");
-                System.out.println("1. Correr ContactosEmergencia.java");
-                System.out.println("2. Correr clasedirectorio.java");
-                System.out.println("3. Cerrar sesion");
-                System.out.println("4. Salir del programa\n");
+                System.out.println("1. Menu de numeros de emergencia");
+                System.out.println("2. Menu de directorio de hospitales por departamento");
+                System.out.println("3. Informe de paciente");
+                System.out.println("4. Cerrar sesion");
+                System.out.println("5. Salir del programa\n");
 
                 opcion = scan.nextInt();
 
                 //Switch
                 switch (opcion) {
+
+                    //Despliega los numeros nacionales de emergencias medicas 
                     case 1: {
                         scan.nextLine();
                         System.out.println("--Numeros de emergencia--");
@@ -66,7 +72,8 @@ public class DriverCovid {
 
                         break;
                     }
-                        
+                    
+                    //Despliega directorio de hospitales por departamento segun el que desee ver el usuario
                     case 2 : {
                         System.out.println("--Directorio de hospitales por departamento--");
                         System.out.println("Ingrese el departamento que quiere ver");
@@ -78,23 +85,36 @@ public class DriverCovid {
                         break;
                     }
 
+                    //Despliega informacion al usuario de su informe como paciente
                     case 3 : {
+                        //Despliega el historial del usuario segun lo que ingreso en el registro
+                        histmedico.InformacionPaciente();
+
+                        //Despliega la probabilidad del usuario de ser contagiado por COVID-19
+                        histmedico.CalculoProbabilidad();
+
+                        break;
+                    }
+
+                    //Cierre de sesion del usuario
+                    case 4 : {
                         scan.nextLine();
-                        System.out.println("Seguro que desea cerrar su sesion? (1. y/2. n)");
-                        int eleccion = scan.nextInt();
-                        if (eleccion == 1) {
+                        System.out.println("Seguro que desea cerrar su sesion? (y/n)");
+                        String eleccion = scan.nextLine();
+                        if (eleccion.equalsIgnoreCase("y")) {
                             System.out.println("Cerrando sesion...\n");
                             logcondicion = true;
-                        } else if (eleccion == 2) {
-                            System.out.println("Ok\n");
+                        } else if (eleccion.equalsIgnoreCase("n")) {
+                            System.out.println("Ok, se continuara la sesion\n");
                             logcondicion = false;
                         } else {
                             System.out.println("Eligio una opcion invalida\n");
                         }
+
                         break;
                     }
                     
-                    case 4 : {
+                    case 5 : {
                         System.out.println("Hasta Luego\nFin del programa...");
                         break;
                     }
