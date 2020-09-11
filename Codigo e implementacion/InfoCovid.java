@@ -1,14 +1,31 @@
+/******************************************************************
+InfoCovid.java
+Integrantes: 
+Jun Woo Lee Hong 
+Cristian Eduardo Aguirre Duarte 
+Andrés Alejandro de la Roca Pineda 
+Sayra Estefanía Elvira Ramos 
+Pablo Daniel Gonzalez Ramos 
+Manuel Alejandro Archila Moran
+
+Última modificación: 9/11/2020
+
+Clase que se encarga de mostarle al usuario informacion importante
+acerca del coronavirus como los sintomas, formas de contagio y
+que cuidados se deben tener para no contagiarse.
+******************************************************************/
+
 public class InfoCovid {
   
 
   //Metodo que devuelve los sintomas que presenta una persona con COVID-19
   public String DesplegarSintomas(){
-    String sinto = "Los posibles sintomas que se pueden presentar en el momento de contraer el COVID-19 son:\n1. Fiebre\n2. Tos seca\n3. Cansancio y fatiga\n4. Dolor de cabeza\n5. Dolor de garganta\n6. Diarrea\n7. Perdida del sentido del gusto y del olfato\nSintomas serios:\n1. Dificultad para respirar\n2. Dolores de pecho\n3. Perdida del habla";
+    String sinto = "Los posibles sintomas que se pueden presentar en el momento de contraer el COVID-19 son:\n1. Fiebre\n2. Tos seca\n3. Cansancio y fatiga\n4. Dolor de cabeza\n5. Dolor de garganta\n6. Diarrea\n7. Perdida del sentido del gusto y del olfato\nSintomas serios:\n1. Dificultad para respirar\n2. Dolores de pecho\n3. Perdida del habla\n";
     return sinto;
   }
   //Metodo que devuee las maneras en que una persona puede contraer el virus
   public String DesplegarManeras(){
-    String man = "Las posibles maneras de contagiarse de COVID-19:\nEl COVID-19 se propaga mayormente de persona a persona. El virus es capaz de viajar por el aire, haciendo que sea muy contagioso. Uno de los sintomas mas comunes es el la tos, esta provoca que la persona con cada tosido, el virus pueda viajar hacia otra persona. Esto tambien puede suceder cuando alguien infectado con las manos sucias toca una superficie. Luego, una persona no infectada toca la superficie y esa persona puede tocarse los ojos o la boca e infectarse. La enfermedad tambien es transmitida por cualquier tipo de fluido corporal como sudar, saliva y cualquier tipo de flemas.";
+    String man = "Las posibles maneras de contagiarse de COVID-19:\nEl COVID-19 se propaga mayormente de persona a persona. El virus es capaz de viajar por el aire, haciendo que sea muy contagioso. Uno de los sintomas mas comunes es el la tos, esta provoca que la persona con cada tosido, el virus pueda viajar hacia otra persona. Esto tambien puede suceder cuando alguien infectado con las manos sucias toca una superficie. Luego, una persona no infectada toca la superficie y esa persona puede tocarse los ojos o la boca e infectarse. La enfermedad tambien es transmitida por cualquier tipo de fluido corporal como sudar, saliva y cualquier tipo de flemas.\n";
     return man;
   }
   //Metodo que devuelve los cuidados que puede tener una persona
