@@ -9,7 +9,7 @@ Pablo Daniel Gonzalez Ramos
 Manuel Alejandro Archila Moran
 
 
-Última modificación: 8/30/2020
+Última modificación: 10/9/2020
 
 Clase que maneja el directorio de los diferentes hospitales en todos
 los departamentos de Guatemala que pueden realizar la prueba de COVID-19
