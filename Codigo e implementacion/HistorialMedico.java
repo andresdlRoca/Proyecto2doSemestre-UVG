@@ -7,6 +7,7 @@ Andrés Alejandro de la Roca Pineda
 Sayra Estefanía Elvira Ramos 
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
+
 Última modificación: 10/9/2020
 Clase que solicita al usuario su historial medico
 incluyendo su edad, sexo y padecimientos para poder 
@@ -15,6 +16,7 @@ tuviese Covid.
 ******************************************************************/
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 public class HistorialMedico{
 	//Atributos
 	private double Riesgo;
@@ -31,19 +33,24 @@ public class HistorialMedico{
 	}
 	//Metodo que solicita la informacion del usuario.
 	public void RegistroHistorial(){
-		System.out.println("\nIngrese su sexo: \n1. Masculino\n2. Femenino");
-		sexo = entrada.nextInt();
-		sexo = sexo - 1;
-		System.out.println("\nIngrese su edad: ");
-		Edad = entrada.nextInt();
-		int Ingreso=0;
-		//Ciclo que llena el arreglo enfermedades dependiendo las que el usuario padezca.
-		for (int i=0;i<5;i++){
-			System.out.println("\nUsted padece "+ListaEnf[i]+"? \n1.Si\n2.No");
-			Ingreso = entrada.nextInt();
-			if (Ingreso == 1){
-				Enfermedades.add(i);
+		try {
+			System.out.println("Porfavor ingrese la siguiente informacion para completar su perfil de paciente");
+			System.out.println("\nIngrese su sexo: \n1. Masculino\n2. Femenino");
+			sexo = entrada.nextInt();
+			sexo = sexo - 1;
+			System.out.println("\nIngrese su edad: ");
+			Edad = entrada.nextInt();
+			int Ingreso=0;
+			//Ciclo que llena el arreglo enfermedades dependiendo las que el usuario padezca.
+			for (int i=0;i<5;i++){
+				System.out.println("\nUsted padece "+ListaEnf[i]+"? \n1.Si\n2.No");
+				Ingreso = entrada.nextInt();
+				if (Ingreso == 1){
+					Enfermedades.add(i);
+				}
 			}
+		} catch(InputMismatchException e) {
+			System.err.println("Se ingresaron datos invalidos, intentelo de nuevo");
 		}
 	}
 	
@@ -76,7 +83,7 @@ public class HistorialMedico{
 		} else if (Edad<100&&sexo==0){
 			probabilidadEdad=95.20;
 		}
-		System.out.println("El riesgo es de "+probabilidadEdad+"%");
+		System.out.println("El riesgo de contagio es de "+probabilidadEdad+"%");
 	}
 
 	//Metodo que muestra la ficha de informacion del usuario de una manera detallada y clara.
