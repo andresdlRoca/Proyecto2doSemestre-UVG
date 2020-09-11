@@ -1,3 +1,21 @@
+/******************************************************************
+Sintomas.java
+Integrantes: 
+Jun Woo Lee Hong 
+Cristian Eduardo Aguirre Duarte 
+Andrés Alejandro de la Roca Pineda 
+Sayra Estefanía Elvira Ramos 
+Pablo Daniel Gonzalez Ramos 
+Manuel Alejandro Archila Moran
+
+Última modificación: 9/11/2020
+
+Clase que se encarga de preguntarle al usuario sobre sus sintomas y
+presentar alguna recomendacion segun los sintomas que presente, si
+sus sintomas son muy graves se le recomienda atender al medico lo
+mas pronto posible
+******************************************************************/
+
 import java.util.Scanner;
 public class Sintomas{
 	String[] SintomasComunes = new String[] {"fiebre","tos Seca ","cansancio"};
@@ -7,11 +25,13 @@ public class Sintomas{
 	Scanner teclado = new Scanner(System.in);
 	Scanner entrada = new Scanner(System.in);
 	
-	
+	//Se le pide al usuario que ingrese su sintomas y segun su respuesta se le recomienda algun tratamiento
 	public void IngresarSintomas(){
 		System.out.println("Cuales son sus sintomas?");
 		String st= teclado.nextLine();
-			if(st.equals("fiebre")||st.equals("tos seca")|| st.equals("cansancio")){
+
+			//Sintomas leves
+			if(st.equalsIgnoreCase("fiebre")||st.equalsIgnoreCase("tos seca")|| st.equalsIgnoreCase("cansancio")){
 				System.out.println("");
 				System.out.println("Sus sintomas no son tan graves, por eso le recomendamos lo siguiente:");
 				System.out.println("");
@@ -26,7 +46,9 @@ public class Sintomas{
 				System.out.println("|        ° Loratadina 10MG (por 5 dias)       |");
 				System.out.println("|      	 °Aspirinas (por 15 dias)             |");
 				System.out.println(" _____________________________________________ ");
-				}else if (st.equals("dolor de garganta")||st.equals("diarrea")|| st.equals("conjuntivitis")||st.equals("erupciones cutáneas")||st.equals("dolor de cabeza")){
+
+				//Sintomas algo graves
+				}else if (st.equalsIgnoreCase("dolor de garganta")||st.equalsIgnoreCase("diarrea")|| st.equalsIgnoreCase("conjuntivitis")||st.equalsIgnoreCase("erupciones cutáneas")||st.equalsIgnoreCase("dolor de cabeza")){
 					System.out.println("");
 					System.out.println("Sus sintomas no son tan graves,sin embargo son bastante inusuales por eso le recomendamos lo siguiente:");
 					System.out.println("");
@@ -43,19 +65,15 @@ public class Sintomas{
 					System.out.println("|      	 4. Vintax                                            |");
 					System.out.println(" ______________________________________________________________");
 					
-				}else if (st.equals("dificultad  para respirara")||st.equals("presion en el pecho")|| st.equals("incapacidad para moverse")){
+				//Sintomas muy graves
+				}else if (st.equalsIgnoreCase("dificultad para respirar")||st.equalsIgnoreCase("presion en el pecho")|| st.equalsIgnoreCase("incapacidad para moverse")){
 					System.out.println("");
-					System.out.println("Sus Sintomas son muy graves, le recomendamos visitar a un medico ");
+					System.out.println("Sus Sintomas son muy graves, le recomendamos visitar a un medico, puede dirigirse a nuestro menu de numeros de emergencia para conseguir ayuda medica inmediata");
 					System.out.println("");
-				}
-				
-				
-				
-				else
-					System.out.println("Sus sintomas no presentados no muestran que sea portador  de el virus de Covid-19");
-			
-			
-			
+
+				//Opcion por si no se presentan sintomas relacionados con el COVID
+				}else {
+					System.out.println("Sus sintomas no presentados no muestran que sea portador de Covid-19");	
 		}
-		
+	}
 }
