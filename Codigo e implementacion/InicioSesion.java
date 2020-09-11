@@ -89,8 +89,6 @@ public class InicioSesion{
 					dataBank.get(username).add(Integer.toString(age));
 					dataBank.get(username).add(email);
 
-					System.out.println(dataBank);
-
 					usernameGate = false;
 				}
 				
