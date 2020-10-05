@@ -56,6 +56,7 @@ public class HistorialMedico{
 	
 	//Metodo que calcula la probabilidad en base a la edad y sexo del usuario
 	public void CalculoProbabilidad(){
+		//Probabilidad por edad y sexo
 		double probabilidadEdad=0.0;
 		if (Edad<20&&sexo==1){
 			probabilidadEdad=8.90;
@@ -69,8 +70,7 @@ public class HistorialMedico{
 			probabilidadEdad=86.30;
 		} else if (Edad<100&&sexo==1){
 			probabilidadEdad=92.70;
-		}
-		if (Edad<20&&sexo==0){
+		} else if (Edad<20&&sexo==0){
 			probabilidadEdad=14.90;
 		} else if (Edad<30&&sexo==0){
 			probabilidadEdad=25.90;
@@ -83,7 +83,38 @@ public class HistorialMedico{
 		} else if (Edad<100&&sexo==0){
 			probabilidadEdad=95.20;
 		}
-		System.out.println("El riesgo de contagio es de "+probabilidadEdad+"%");
+		//Probabilidad por enfermedades
+		int NumEnfermedades = Enfermedades.size();
+		double probabilidadEnfermedad=0.0;
+		if (NumEnfermedades==1){
+			probabilidadEnfermedad = 5;
+		} else if (NumEnfermedades==2){
+			probabilidadEnfermedad = 10;
+		} else if (NumEnfermedades==3){
+			probabilidadEnfermedad = 20;
+		} else if (NumEnfermedades==4){
+			probabilidadEnfermedad = 30;
+		} else if (NumEnfermedades==5){
+			
+		}
+		//Calculo de probabilidad total
+		double probabilidadTotal = 0.0;
+		probabilidadTotal = probabilidadEnfermedad + probabilidadEdad;
+		System.out.println("Nivel de riesgo: ");
+		if (probabilidadTotal>0&&probabilidadTotal<25){
+			System.out.println("Bajo");
+		} else if (probabilidadTotal>24&&probabilidadTotal< 40){
+			System.out.println("Medio bajo");
+		} else if (probabilidadTotal>39&&probabilidadTotal<60){
+			System.out.println("Medio");
+		} else if (probabilidadTotal>59&&probabilidadTotal<85){
+			System.out.println("Medio alta");
+		} else if (probabilidadTotal>84){
+			System.out.println("Alta");
+		} else if (probabilidadTotal>100){
+			System.out.println("Extremo Alta");
+		}
+		
 	}
 
 	//Metodo que muestra la ficha de informacion del usuario de una manera detallada y clara.
