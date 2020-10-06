@@ -33,24 +33,32 @@ public class HistorialMedico{
 	}
 	//Metodo que solicita la informacion del usuario.
 	public void RegistroHistorial(){
-		try {
-			System.out.println("Porfavor ingrese la siguiente informacion para completar su perfil de paciente");
-			System.out.println("\nIngrese su sexo: \n1. Masculino\n2. Femenino");
-			sexo = entrada.nextInt();
-			sexo = sexo - 1;
-			System.out.println("\nIngrese su edad: ");
-			Edad = entrada.nextInt();
-			int Ingreso=0;
-			//Ciclo que llena el arreglo enfermedades dependiendo las que el usuario padezca.
-			for (int i=0;i<5;i++){
-				System.out.println("\nUsted padece "+ListaEnf[i]+"? \n1.Si\n2.No");
-				Ingreso = entrada.nextInt();
-				if (Ingreso == 1){
-					Enfermedades.add(i);
+		boolean runhistorial = true;
+		while (runhistorial){
+			try {
+				System.out.println("Porfavor ingrese la siguiente informacion para completar su perfil de paciente");
+				System.out.println("\nIngrese su sexo: \n1. Masculino\n2. Femenino");
+				sexo = entrada.nextInt();
+				sexo = sexo - 1;
+				System.out.println("\nIngrese su edad: ");
+				Edad = entrada.nextInt();
+				int Ingreso=0;
+				//Ciclo que llena el arreglo enfermedades dependiendo las que el usuario padezca.
+				for (int i=0;i<5;i++){
+					System.out.println("\nUsted padece "+ListaEnf[i]+"? \n1.Si\n2.No");
+					Ingreso = entrada.nextInt();
+					if (Ingreso == 1){
+						Enfermedades.add(i);
+					} else if (Ingreso != 1 || Ingreso != 2) {
+						System.out.println("Ingreso una opcion invalida, intentelo de nuevo");
+						i = i-1;
+					}
 				}
+				runhistorial = false;
+			} catch(InputMismatchException e) {
+				System.err.println("Se ingresaron datos invalidos, intentelo de nuevo");
+				entrada.nextLine();
 			}
-		} catch(InputMismatchException e) {
-			System.err.println("Se ingresaron datos invalidos, intentelo de nuevo");
 		}
 	}
 	
