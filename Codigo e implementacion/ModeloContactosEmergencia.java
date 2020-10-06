@@ -1,3 +1,20 @@
+/******************************************************************
+ModeloContactosEmergencia.java
+Integrantes: 
+Jun Woo Lee Hong 
+Cristian Eduardo Aguirre Duarte 
+Andrés Alejandro de la Roca Pineda 
+Sayra Estefanía Elvira Ramos 
+Pablo Daniel Gonzalez Ramos 
+Manuel Alejandro Archila Moran
+
+Última modificación: 10/9/2020
+
+Clase que modelo de los contactos de emergencia que guarda toda la informacion
+que se le puede proporcionar al usuario relacionado al tema de los contactos
+de emergencia
+******************************************************************/
+
 import java.util.HashMap;
 
 public class ModeloContactosEmergencia {
