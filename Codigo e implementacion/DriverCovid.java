@@ -25,14 +25,16 @@ public class DriverCovid {
         boolean logcondicion = true;
 
         Scanner scan = new Scanner(System.in);
-        ContactosEmergencia CE = new ContactosEmergencia();
+        ModeloContactosEmergencia contactosModel = new ModeloContactosEmergencia();
+        VistaContactosEmergencia contactosVista = new VistaContactosEmergencia();
+        ControladorContactosEmergencia CE = new ControladorContactosEmergencia(contactosModel, contactosVista);
         ClaseDirectorio CD = new ClaseDirectorio();
         HistorialMedico histmedico = new HistorialMedico();
         InfoCovid info = new InfoCovid();
         Sintomas Sint = new Sintomas();
         InicioSesion lg = new InicioSesion();
 
-        CE.crearListaContactos();
+        CE.inicializarContactos();
         CD.setAllHashmaps();
 
         //Loop principal
@@ -71,7 +73,7 @@ public class DriverCovid {
                         System.out.println("2. Numeros de emergencia privados");
 
                         int seleccionnum = scan.nextInt();
-                        System.out.println(CE.getContacto(seleccionnum)); 
+                        CE.buscarContactos(seleccionnum);
 
                         break;
                     }
@@ -143,7 +145,7 @@ public class DriverCovid {
 
                 }
 
-            } catch (Exception e) {
+            } catch (InputMismatchException | NullPointerException e) {
                 System.out.println("Ingreso una opcion invalida, intente de nuevo");
                 scan.nextLine();
             }   
