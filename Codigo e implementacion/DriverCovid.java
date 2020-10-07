@@ -8,7 +8,7 @@ Sayra Estefanía Elvira Ramos
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
 
-Última modificación: 06/10/2020
+Última modificación: 07/10/2020
 
 Clase que se encarga de toda la interaccion que el usuario tiene 
 con el programa, le permite interactuar al usuario con todas las funciones
@@ -16,6 +16,7 @@ que el programa tiene.
 ******************************************************************/
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class DriverCovid { 
 
@@ -23,6 +24,10 @@ public class DriverCovid {
         
         int opcion = 0; //Variable que controla las opciones del menu
         boolean logcondicion = true;
+        String fileName = "UserInfoTest.csv";
+        boolean logCondition = true;
+        boolean wrongPassword = true;
+        int opcionLogIn = 0;
 
         Scanner scan = new Scanner(System.in);
         ModeloContactosEmergencia contactosModel = new ModeloContactosEmergencia();
@@ -32,22 +37,100 @@ public class DriverCovid {
         HistorialMedico histmedico = new HistorialMedico();
         InfoCovid info = new InfoCovid();
         Sintomas Sint = new Sintomas();
-        InicioSesion lg = new InicioSesion();
+        InicioSesion log = new InicioSesion();
 
         CE.inicializarContactos();
         CD.setAllHashmaps();
 
         //Loop principal
         while (opcion != 7) {
-            while(logcondicion) {
-                try {
-                    lg.getLogIn();
-                    histmedico.RegistroHistorial();
-                    logcondicion = false;    
-                } catch (InputMismatchException e) {
-                    System.err.println("Ingreso un dato invalido, intente de nuevo");
-                } 
-            }
+            
+	        while (opcionLogIn != 3){
+	        
+	            System.out.println("Elija un numero:");
+	            System.out.println("1. Ingresar sesion");
+	            System.out.println("2. Crear cuenta");
+	            System.out.println("3. Continuar"); 
+	            
+	            opcionLogIn = scan.nextInt();
+	            
+	            if (opcionLogIn == 1){
+	                logCondition = true;
+	                while(logCondition){
+	                    scan.nextLine();
+	                    System.out.println("Ingrese su usuario");
+	                    String inputUsername = scan.nextLine();
+
+	                    System.out.println("Ingrese su contraseña");
+	                    String inputPassword = scan.nextLine();
+
+	                    
+
+	                    log.logIn(inputUsername, fileName);
+
+	                    
+	                    if(log.csvUsername.equals(inputUsername)){
+	                        System.out.println("");
+	                    }else{
+	                        break;
+	                        
+	                    }
+
+
+	                    
+	                    if(inputPassword.equals(log.csvPassword)){
+	                        JOptionPane.showMessageDialog(null, "Bienvenido a nuestro programa " + log.csvName );
+	                        logCondition = false;
+
+	                    }else{
+	                        while(wrongPassword){
+	                            System.out.println("Esa contraseña es incorrecta, ingrese otra vez");
+	                            inputPassword = scan.nextLine();
+
+	                            if(inputPassword.equals(log.csvPassword)){
+	                            JOptionPane.showMessageDialog(null, "Bienvenido a nuestro programa " + log.csvName );
+	                            wrongPassword = false;
+	                            logCondition = false;
+	                            }
+	                        }
+	                    }
+
+
+	                }
+
+	            } else if (opcionLogIn == 2){
+	                
+	                scan.nextLine();
+	                System.out.println("Porfavor ingrese su usuario para continuar.");
+	                String username = scan.nextLine();
+	                
+	                System.out.println("Ingrese su contraseña");
+	                String password = scan.nextLine();
+
+	                System.out.println("Ingrese su nombre porfavor");
+	                String name = scan.nextLine();
+
+	                System.out.println("Ingrese su vivienda");
+	                String address = scan.nextLine();
+
+	                System.out.println("Ingrese su edad");
+	                String age = scan.nextLine();
+
+	                System.out.println("Ingrese su correo electronico");
+	                String email = scan.nextLine();
+
+	                
+
+	                log.saveAccount(username, password, name, address, age, email, fileName);
+
+	            } else if (opcionLogIn == 3){
+	            	histmedico.RegistroHistorial();
+	        	}
+	        }
+
+	        
+
+
 
             try {
                 //Opciones del sistema
