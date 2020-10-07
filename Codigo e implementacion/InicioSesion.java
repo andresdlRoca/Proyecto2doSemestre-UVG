@@ -1,5 +1,5 @@
 /******************************************************************
-Login.java
+InicioSesion.java
 Integrantes: 
 Jun Woo Lee Hong 
 Cristian Eduardo Aguirre Duarte 
@@ -8,93 +8,91 @@ Sayra Estefanía Elvira Ramos
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
 
-Última modificación: 10/9/2020
+Última modificación: 07/10/2020
 
 Clase que se encarga de registrar/logear a los usuarios que utilicen el 
 programa, de esta manera se puede guardar todos sus datos y personalizar
 la experiencia del programa.
 ******************************************************************/
 
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import javax.swing.JOptionPane;
+import java.io.File;
+
 import java.util.Scanner;
-import java.util.HashMap;
-import java.util.ArrayList;
 
-public class InicioSesion{
+
+class InicioSesion{
 	Scanner scan = new Scanner(System.in);
-	boolean usernameGate = true;
-	boolean passwordGate = true;
-	String username, password, name, address, email;
-	int choiceAccount, age;
+	public Scanner s;
+	String csvUsername = ""; String csvPassword = ""; String csvName = ""; String csvAddress = ""; String csvAge = ""; String csvEmail = "";
+	
 
-	//Hashmap que registra la informacion de todos los usuarios registrados
-	HashMap<String, ArrayList<String>> dataBank = new HashMap<String, ArrayList<String>>();
 
-	//Metodo para registrar/logear al usuario dentro del programa
-	public void getLogIn(){
-		usernameGate = true;
 
-		while(usernameGate){
-			System.out.println("Bienvenido a nuestro programa, porfavor ingrese su usuario para continuar.");
-			username = scan.nextLine();
-			passwordGate = true;
+	public void logIn(String inputUsername, String fileName){
+		//Metodo para hacer log in
+		boolean found = true;
+		
 
-			//Se chequea si el usuario existe dentro de la base de datos
-			if(dataBank.containsKey(username)){
+		try{
+			//Lee el csv con la informacion y guarda los datos en variables
+			s = new Scanner(new File(fileName));	
+			s.useDelimiter("[,\n]");
 
-				//Si existe se le pide la contraseña al usuario
-				while(passwordGate){
-					System.out.println("Ingrese su contraseña porfavor");
-					password = scan.nextLine();
-					if(dataBank.get(username).contains(password)){
-					System.out.println("Seccion ingresada correctamente.");
-					passwordGate = false;
-					usernameGate = false;
-					}else{
-						System.out.println("Contrasena ingresada incorrecta, ingrese otra vez.");	
-					}
-				}
-			}else{
-
-				//Si no existe se le pregunta al usuario si se quiere registrar
-				System.out.println("Ese usuario no esta registrado en nuestra base de datos, Desea crear una cuenta nueva?\n1.Si\n2.No");
-				choiceAccount = scan.nextInt();
-
-				if(choiceAccount == 2){
-					System.out.println("");
-				}else{
-					//Recoleccion de datos del usuario
-					scan.nextLine();
-					System.out.println("Ingrese su contraseña");
-					password = scan.nextLine();
-					
-					System.out.println("Ingrese su nombre porfavor");
-					name = scan.nextLine();
-					
-					System.out.println("Ingrese su vivienda");
-					address = scan.nextLine();
-						
-
-					System.out.println("Ingrese su edad");
-					age = scan.nextInt();
-					
-					scan.nextLine();
-					System.out.println("Ingrese su correo electronico");
-					email = scan.nextLine();
-					
-					//Se guardan los datos dentro del hashmap
-					dataBank.put(username, new ArrayList<String>());
-					dataBank.get(username).add(password);
-					dataBank.get(username).add(name);
-					dataBank.get(username).add(address);
-					dataBank.get(username).add(Integer.toString(age));
-					dataBank.get(username).add(email);
-
-					usernameGate = false;
-				}
+			while(s.hasNext() && found){
+				csvUsername = s.next();
+				csvPassword = s.next();				
+				csvName = s.next();					
+				csvAddress = s.next();				
+				csvAge = s.next();			
+				csvEmail = s.next();
 				
-			}
 
+				if(csvUsername.equals(inputUsername)){
+					//Si encuentra el usuario que fue ingresado, para el loop
+					found = false;
+				}else{
+					//Muestra un mensaje diciendo que el usuario ingresado no esta en la base de datos
+					JOptionPane.showMessageDialog(null, "Ese usuario no esta guardado en nuestro sistema");
+				}
+			}
 		}
 		
+		catch(Exception E){
+			JOptionPane.showMessageDialog(null, "Ese usuario no esta guardado en nuestro sistema");
+		}
 	}
-}
+
+		
+	public void saveAccount(String username, String password, String name, String address, String age, String email, String fileName){
+		//Para crear una cuenta nueva
+		try{
+			FileWriter fw = new FileWriter(fileName, true);
+			
+			fw.append(username);
+			fw.append(',');
+			fw.append(password);
+			fw.append(',');
+			fw.append(name);
+			fw.append(',');
+			fw.append(address);
+			fw.append(',');
+			fw.append(age);
+			fw.append(',');
+			fw.append(email);
+			fw.append('\n');
+
+			fw.flush();
+			fw.close();
+
+			JOptionPane.showMessageDialog(null,"Cuenta creada");
+		}
+		catch(Exception E){
+
+			JOptionPane.showMessageDialog(null,"No se pudo crear cuenta");
+		}
+	}
+} 
