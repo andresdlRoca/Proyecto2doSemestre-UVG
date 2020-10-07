@@ -24,7 +24,7 @@ public class DriverCovid {
         
         int opcion = 0; //Variable que controla las opciones del menu
         boolean logcondicion = true;
-        String fileName = "UserInfoTest.csv";
+        String fileName = "DataLogIn.csv";
         boolean logCondition = true;
         boolean wrongPassword = true;
         int opcionLogIn = 0;
