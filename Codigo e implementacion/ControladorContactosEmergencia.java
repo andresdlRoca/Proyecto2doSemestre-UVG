@@ -8,7 +8,7 @@ Sayra Estefanía Elvira Ramos
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
 
-Última modificación: 10/9/2020
+Última modificación: 06/10/2020
 
 Clase que controla la clase modelo y vision de los contactos de emergencia,
 se le pregunta alusuario la region en la que desea ver los contactos 

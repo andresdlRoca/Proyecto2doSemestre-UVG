@@ -8,7 +8,7 @@ Sayra Estefanía Elvira Ramos
 Pablo Daniel Gonzalez Ramos 
 Manuel Alejandro Archila Moran
 
-Última modificación: 10/9/2020
+Última modificación: 06/10/2020
 
 Clase que modelo de los contactos de emergencia que guarda toda la informacion
 que se le puede proporcionar al usuario relacionado al tema de los contactos
