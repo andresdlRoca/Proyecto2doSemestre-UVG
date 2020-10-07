@@ -49,7 +49,7 @@ public class HistorialMedico{
 					Ingreso = entrada.nextInt();
 					if (Ingreso == 1){
 						Enfermedades.add(i);
-					} else if (Ingreso != 1 || Ingreso != 2) {
+					} else if (Ingreso >= 3) {
 						System.out.println("Ingreso una opcion invalida, intentelo de nuevo");
 						i = i-1;
 					}
