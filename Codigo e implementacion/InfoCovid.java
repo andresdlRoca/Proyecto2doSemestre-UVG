@@ -33,5 +33,11 @@ public class InfoCovid {
     String cui = "Las mejores medidas para evitar contraer y propagar el virus son:\n1. Usar mascarilla protectora de manera adecuada. Esta debe cubrir la boca y la nariz.\n2. Lavarse las manos despues de haber tenido contacto con una persona desconocida.\n3. Evitar salir de la casa, a menos que sea necesario.\n4. Al llegar a casa procurar cambiarse de vestimenta.\n5. Mantenerse a mas de metro y medio de las personas cuando salga de su casa.\n6. Respetar las normas de los lugares a los que asista.\n7. Evitar aglomeraciones.\n8. Mantener alcohol en gel a la mano para desinfectarse las manos.";
     return cui;
   }
+  //Metodo que proporciona links a paginas con informacion mas detallada
+  public void MasInfo(){
+    System.out.println("Mas medidas brindadas por la OMS: https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public");
+    System.out.println("Posibles rumores esparcidos del COVID-19: https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters");
+    System.out.println("Consejos para viajes seguros: https://www.who.int/ith/2019-nCoV_advice_for_international_traffic/es/");
+  }
   
 }
