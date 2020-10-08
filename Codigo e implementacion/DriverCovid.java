@@ -206,10 +206,9 @@ public class DriverCovid {
                         String eleccion = scan.nextLine();
                         if (eleccion.equalsIgnoreCase("y")) {
                             System.out.println("Cerrando sesion...\n");
-                            logcondicion = true;
+                            opcionLogIn = 4;
                         } else if (eleccion.equalsIgnoreCase("n")) {
                             System.out.println("Ok, se continuara la sesion\n");
-                            logcondicion = false;
                         } else {
                             System.out.println("Eligio una opcion invalida\n");
                         }
