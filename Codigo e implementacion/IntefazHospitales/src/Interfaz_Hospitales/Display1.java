@@ -34,7 +34,8 @@ public class Display1 extends javax.swing.JFrame {
    
     private void initComponents() {
         //Codigo para crear la interfaz grafica, con todos los botones, y cajas de texto
-
+        setUndecorated(true);
+        
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -172,6 +173,7 @@ public class Display1 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 750));
 
         pack();
+        setLocationRelativeTo(null);
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {

@@ -40,7 +40,8 @@ public class HistorialMedico extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
         //Codigo para crear la interfaz grafica, con todos los botones, y cajas de texto
-
+        setUndecorated(true);
+        
         GrupoDeBotones = new javax.swing.ButtonGroup();
         BotonesDeEdad = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
@@ -319,6 +320,7 @@ public class HistorialMedico extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {

@@ -38,6 +38,7 @@ public class ContactosEmergencia extends javax.swing.JFrame {
     
     private void initComponents() {
         //Codigo para crear la interfaz grafica, con todos los botones, y cajas de texto
+        setUndecorated(true);
 
         jScrollPane1 = new javax.swing.JScrollPane();
         ContactosPublicos = new javax.swing.JTextArea();
@@ -74,7 +75,7 @@ public class ContactosEmergencia extends javax.swing.JFrame {
         LabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 18)); 
         LabelTitulo.setText("Lista de contactos de emergencia");
         getContentPane().add(LabelTitulo);
-        LabelTitulo.setBounds(170, 20, 260, 21);
+        LabelTitulo.setBounds(170, 20, 280, 21);
 
         ExitButton.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 11)); 
         ExitButton.setText("Salir");
@@ -84,7 +85,7 @@ public class ContactosEmergencia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ExitButton);
-        ExitButton.setBounds(20, 10, 55, 25);
+        ExitButton.setBounds(20, 10, 65, 25);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Andre\\Desktop\\GUI\\Servicios-salud.jpg")); 
         jLabel2.setText("jLabel2");
@@ -92,6 +93,7 @@ public class ContactosEmergencia extends javax.swing.JFrame {
         jLabel2.setBounds(-580, 0, 1240, 450);
 
         pack();
+        setLocationRelativeTo(null);
     }
     
     //Se encarga del funcionamiento del boton de salida

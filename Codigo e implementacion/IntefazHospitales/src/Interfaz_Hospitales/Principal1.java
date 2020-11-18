@@ -33,7 +33,8 @@ public class Principal1 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     
     private void initComponents() {
-
+        setUndecorated(true);
+        
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jLabel1 = new javax.swing.JLabel();
@@ -139,6 +140,7 @@ public class Principal1 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }
 
     private void campoN1ActionPerformed(java.awt.event.ActionEvent evt) {
