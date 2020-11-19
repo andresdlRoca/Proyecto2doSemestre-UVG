@@ -146,16 +146,18 @@ public class Interfazgeneral extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         //Boton que abre la interfaz de ContactosEmergencia
-        ContactosEmergencia e=new ContactosEmergencia();
+        ContactosEmergencia e = new ContactosEmergencia();
         e.setVisible(true);
+        e.setLocationRelativeTo(null);
        
 
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
         //Boton que abre la interfaz de Principal1
-        Principal1 p1=new Principal1();
-        p1.setVisible(true);
+        Sintomas sintomas = new Sintomas();
+        sintomas.setVisible(true);
+        sintomas.setLocationRelativeTo(null);
   
     }
 

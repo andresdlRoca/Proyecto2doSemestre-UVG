@@ -1,5 +1,5 @@
 =======================
-Entrega 4 Proyecto POO
+Entrega Final Proyecto POO
 =======================
 Realizado por:
 Jun Woo Lee Hong 20358
@@ -18,5 +18,5 @@ Sin embargo por cualquier tipo de inconveniente que pueda causar
 correr las clases por aparte en la linea de comandos debido a 
 librerias externas se creo un archivo ejecutable .jar el cual
 puede ser utilizado para correr el proyecto entero. Este archivo
-.jar se encuentra en la carpeta .rar "Entrega 4 jar".
+.jar se encuentra en la carpeta .rar "Jar del programa.rar".
 
